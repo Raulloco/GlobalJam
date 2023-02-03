@@ -16,6 +16,13 @@ public class Water : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (Player.GetComponent<PlayerMoves>().waterjumped) 
+        {
+            //transform.position = new Vector3(Player.gameObject.transform.position.x,transform.position.y,transform.position.z);
+            transform.position = Player.gameObject.transform.position;
+            GetComponent<SpriteRenderer>().enabled = false;
+        } else GetComponent<SpriteRenderer>().enabled = true;
+        //direção do mouse
         cursordirect = new Vector3(Player.transform.position.x - cursor.position.x, Player.transform.position.y - cursor.position.y, 0f);
         //está na poça
         if (wet)
