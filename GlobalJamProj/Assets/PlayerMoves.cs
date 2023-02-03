@@ -104,9 +104,24 @@ public class PlayerMoves : MonoBehaviour
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+    public Vector3 waterrecuo;
+    public Vector3 waterecuobkp;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (waterjumped) {waterjumped = false;}
+        if (waterjumped) 
+        {
+            if (collision.gameObject.layer == 6) { waterjumped = false; }
+            else 
+            {
+                if (collision.gameObject.transform.position.x > transform.position.x)
+                { waterecuobkp.x = -waterrecuo.x; }
+                else { waterecuobkp.x = waterrecuo.x; }
+                if (collision.gameObject.transform.position.y > transform.position.y)
+                { waterecuobkp.y = -waterrecuo.y; }
+                else { waterecuobkp.y = waterrecuo.y; }
+                GetComponent<Rigidbody2D>().AddForce(waterecuobkp, ForceMode2D.Impulse);
+            }
+        }
         anim.SetBool("jump",false);
         anim.SetBool("falling", false);
     }

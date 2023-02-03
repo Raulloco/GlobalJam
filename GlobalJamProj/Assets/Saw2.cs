@@ -12,6 +12,7 @@ public class Saw2 : MonoBehaviour
     public Vector3 NextPos;
     public Vector3 BackPos;
 
+    public bool willsetparent;
     public bool waiter;
     public bool faller;
 
@@ -28,6 +29,7 @@ public class Saw2 : MonoBehaviour
     public float cc;
     public float timer;
     public bool touched;
+
 
     private void Start()
     {
@@ -95,7 +97,7 @@ public class Saw2 : MonoBehaviour
         else
 
         //coloca player pra andar junto
-        if (collision.transform.position.y > transform.position.y + TopPositionFromPivot)
+        if (willsetparent&& collision.transform.position.y > transform.position.y + TopPositionFromPivot)
         {
             collision.transform.SetParent(transform);
         }
