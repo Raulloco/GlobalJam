@@ -9,6 +9,9 @@ public class Earth : MonoBehaviour
     public float speed;
     private Vector3 cursordirect;
     private bool touched;
+
+    private int rotated;
+    private float rotbkp;
     //private bool floating;
     // Start is called before the first frame update
     void Start()
@@ -27,19 +30,32 @@ public class Earth : MonoBehaviour
     private void OnMouseDown()
     {
         touched = false;
+        rotbkp = Player.transform.localEulerAngles.y;
     }
     private void OnMouseDrag()
     {
         //transform.position = Vector3.MoveTowards(transform.position,cursor.position,speed*Time.deltaTime);
-        if (!touched)
+        if (!touched&&!Player.GetComponent<PlayerMoves>().waterjumped)
         {
             GetComponent<Rigidbody2D>().velocity = -cursordirect * speed;
-            Player.GetComponent<PlayerMoves>().enabled = false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             //floating = true;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             gameObject.layer = 8;
             Physics2D.IgnoreLayerCollision(8, 9, true);
+
+            Player.GetComponent<PlayerMoves>().enabled = false;
+            Player.GetComponent<Animator>().SetBool("Earthing", true);
+            if (transform.position.x < Player.transform.position.x&&rotated!=1)
+            {
+                Player.transform.localEulerAngles=new Vector3(Player.transform.localEulerAngles.x, -180f, Player.transform.localEulerAngles.z); 
+                rotated = 1;
+            }
+            else if(transform.position.x > Player.transform.position.x && rotated!=-1)
+            {
+                rotated = -1;
+                Player.transform.localEulerAngles = new Vector3(Player.transform.localEulerAngles.x, 0f, Player.transform.localEulerAngles.z);
+            }
         }
     }
     private void OnMouseUp()
@@ -47,6 +63,8 @@ public class Earth : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         //gameObject.layer = 6;
         Player.GetComponent<PlayerMoves>().enabled = true;
+        Player.GetComponent<Animator>().SetBool("Earthing", false);
+        if (rotated != 0) {rotated = 0; Player.transform.localEulerAngles = new Vector3(Player.transform.localEulerAngles.x, rotbkp, Player.transform.localEulerAngles.z); }
         //floating = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -65,6 +83,8 @@ public class Earth : MonoBehaviour
             touched = true;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             //gameObject.layer = 6;
+            Player.GetComponent<Animator>().SetBool("Earthing", false);
+            if (rotated == 1) { rotated = 0; Player.transform.localEulerAngles = new Vector3(Player.transform.localEulerAngles.x, rotbkp, Player.transform.localEulerAngles.z); }
             Player.GetComponent<PlayerMoves>().enabled = true;
             //floating = false;
         }

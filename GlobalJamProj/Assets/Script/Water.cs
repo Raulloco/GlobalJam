@@ -11,20 +11,29 @@ public class Water : MonoBehaviour
     private Vector3 cursordirect;
     public Transform cursor;
     public GameObject Seta;
+    //private Vector3 playerposcorrection;
     // Start is called before the first frame update
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Player.GetComponent<PlayerMoves>().waterjumped) 
+        //Segue a posição do player
+        if (Player.GetComponent<PlayerMoves>().waterjumped)
         {
             //transform.position = new Vector3(Player.gameObject.transform.position.x,transform.position.y,transform.position.z);
-            transform.position = Player.gameObject.transform.position;
+            //transform.position = new Vector3(Player.gameObject.transform.position.x, Player.gameObject.transform.position.y-playerposcorrection.y, transform.position.z);
             GetComponent<SpriteRenderer>().enabled = false;
-        } else GetComponent<SpriteRenderer>().enabled = true;
+            GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        { 
+            GetComponent<SpriteRenderer>().enabled = true; 
+            GetComponent<Collider2D>().enabled = true;
+            transform.SetParent(null);
+        }
         //direção do mouse
-        cursordirect = new Vector3(Player.transform.position.x - cursor.position.x, Player.transform.position.y - cursor.position.y, 0f);
+        cursordirect = new Vector3(Player.transform.position.x - cursor.position.x, Player.transform.position.y - cursor.position.y, 0);
         //está na poça
         if (wet)
         {
@@ -47,6 +56,7 @@ public class Water : MonoBehaviour
                     teste = false;
                     Player.GetComponent<PlayerMoves>().waterjumped = true;
                     Seta.SetActive(false);
+                    transform.SetParent(Player.transform, true);
                 }             
             }
             
@@ -61,6 +71,7 @@ public class Water : MonoBehaviour
         {
             wet = true;   
             Player=collision.gameObject;
+            //playerposcorrection = new Vector3(0, Player.gameObject.transform.position.y-transform.position.y , 0);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -68,6 +79,7 @@ public class Water : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             wet = false;
+            Seta.SetActive(false);
         }
     }
 }

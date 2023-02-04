@@ -14,7 +14,7 @@ public class PlayerMoves : MonoBehaviour
 
     private int jumpCount;
     private Rigidbody2D rb;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     private float moveDirection;
     private bool isJumping = false;
     private bool isGrounded;
@@ -61,6 +61,11 @@ public class PlayerMoves : MonoBehaviour
         if (!waterjumped) { rb.velocity = new Vector3(moveDirection * moveSpeed * Time.deltaTime, rb.velocity.y, 0f); }
 
         else rb.AddForce(new Vector2(moveDirection * (moveSpeed/25) * Time.deltaTime, 0f), ForceMode2D.Impulse);
+        if (moveDirection == 0)
+        {
+            anim.SetBool("walking", false);
+        }
+        else anim.SetBool("walking", true);
 
         if (isJumping && jumpCount > 0)
         {
@@ -78,14 +83,11 @@ public class PlayerMoves : MonoBehaviour
         if (moveDirection > 0 && !isFacingRight)
         {
             FlipCharacter();
-            anim.SetBool("walking", true);
         }
         else if (moveDirection < 0 && isFacingRight)
         {
             FlipCharacter();
-            anim.SetBool("walking", true);
-        }
-        else if (moveDirection == 0) anim.SetBool("walking", false);
+        } 
     }
 
     private void ProcessarInputs()
@@ -99,7 +101,7 @@ public class PlayerMoves : MonoBehaviour
         }
     }
 
-    private void FlipCharacter()
+    public void FlipCharacter()
     {
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
@@ -110,7 +112,7 @@ public class PlayerMoves : MonoBehaviour
     {
         if (waterjumped) 
         {
-            if (collision.gameObject.layer == 6) { waterjumped = false; }
+            if (collision.gameObject.layer == 6&&!collision.gameObject.CompareTag("Earth")) { waterjumped = false; }
             else 
             {
                 //quica se n for o chão
