@@ -20,7 +20,7 @@ public class Earth : MonoBehaviour
     void Update()
     {
         Physics2D.IgnoreLayerCollision(8, 11, true);
-        Physics2D.IgnoreLayerCollision(6, 11, true);
+        //Physics2D.IgnoreLayerCollision(6, 11, true);
         Physics2D.IgnoreLayerCollision(8, 10, true);
         cursordirect = new Vector3(transform.position.x - cursor.position.x, transform.position.y - cursor.position.y, 0f);
     }
@@ -38,7 +38,7 @@ public class Earth : MonoBehaviour
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
             //floating = true;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-            gameObject.layer = 8;
+            //gameObject.layer = 8;
             Physics2D.IgnoreLayerCollision(8, 9, true);
         }
     }
@@ -53,7 +53,6 @@ public class Earth : MonoBehaviour
     {
         if ((collision.gameObject.layer == 6|| collision.gameObject.layer == 8) )//&& !floating) 
         { 
-            gameObject.layer = 6;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionX| RigidbodyConstraints2D.FreezeRotation;
             Physics2D.IgnoreLayerCollision(8, 9, false);
         }
@@ -64,7 +63,6 @@ public class Earth : MonoBehaviour
         {
             touched = true;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            //gameObject.layer = 6;
             Player.GetComponent<PlayerMoves>().enabled = true;
             //floating = false;
         }
