@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class Life : MonoBehaviour
+public class Life2 : MonoBehaviour
 {
-    public float life = 2;
+    public float life=2;
     public bool enemy;
     public float recuoy;
     public float recuox;
@@ -15,16 +17,16 @@ public class Life : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Spike")) 
         {
             if (collision.gameObject.transform.position.x > transform.position.x)
             { recuoxbkp = -recuox; }
             else { recuoxbkp = recuox; }
             life -= collision.gameObject.GetComponent<Damage>().damage;
             updateUI(false);
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(recuoxbkp, recuoy, 0), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(recuoxbkp, recuoy, 0),ForceMode2D.Impulse);
         }
-
+        
     }
 
     void updateUI(bool condition)
@@ -36,7 +38,7 @@ public class Life : MonoBehaviour
         {
             //call game over function here
             gameOver();
-
+            
         }
     }
 
