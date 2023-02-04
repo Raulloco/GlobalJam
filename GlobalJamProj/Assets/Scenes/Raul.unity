@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 55311500}
   - component: {fileID: 55311499}
   - component: {fileID: 55311503}
+  - component: {fileID: 55311504}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -591,6 +592,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &55311504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55311498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4207c0939cf0ef34daa6be0ce22b21bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wet: 0
+  teste: 0
+  speed: 75
+  Player: {fileID: 883183063}
+  cursordirect: {x: 0, y: 0, z: 0}
+  cursor: {fileID: 1335552099}
+  Seta: {fileID: 328370677}
 --- !u!1 &91527824
 GameObject:
   m_ObjectHideFlags: 0
