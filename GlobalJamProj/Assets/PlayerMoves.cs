@@ -113,6 +113,7 @@ public class PlayerMoves : MonoBehaviour
             if (collision.gameObject.layer == 6) { waterjumped = false; }
             else 
             {
+                //quica se n for o chão
                 if (collision.gameObject.transform.position.x > transform.position.x)
                 { waterecuobkp.x = -waterrecuo.x; }
                 else { waterecuobkp.x = waterrecuo.x; }
