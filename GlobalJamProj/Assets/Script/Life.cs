@@ -6,9 +6,8 @@ public class Life : MonoBehaviour
 {
     public float life = 2;
     public bool enemy;
-    public float recuoy;
-    public float recuox;
-    private float recuoxbkp;
+    public Vector2 recuo;
+    private Vector2 recuoxbkp;
     public GameObject[] hearts;
     public GameObject gameOverBackground;
 
@@ -18,11 +17,11 @@ public class Life : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
         {
             if (collision.gameObject.transform.position.x > transform.position.x)
-            { recuoxbkp = -recuox; }
-            else { recuoxbkp = recuox; }
+            { recuoxbkp.x = -recuo.x; }
+            else { recuoxbkp.x = recuo.x; }
             life -= collision.gameObject.GetComponent<Damage>().damage;
             updateUI(false);
-            GetComponent<Rigidbody2D>().AddForce(new Vector3(recuoxbkp, recuoy, 0), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector3(recuoxbkp.x, recuo.y, 0), ForceMode2D.Impulse);
         }
 
     }
