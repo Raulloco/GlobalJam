@@ -15,11 +15,25 @@ public class MovimentacaoSeta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-
-        Vector2 position = direction.normalized;
+        Vector3 direction = Input.mousePosition - Camera.main.WorldToScreenPoint(player.transform.position);
+        float magnitiudedir = direction.magnitude;
+       
         
-        transform.position = (Vector2)player.transform.position + position;
+        if (magnitiudedir < 100f)
+        {
+            transform.localScale = Vector3.one;
+        }
+        else if(magnitiudedir <= 400f)
+        {
+            transform.localScale =  Vector3.one  * (1 + 2*(magnitiudedir - 100f)/300f);
+        }
+        else
+        {
+            transform.localScale = Vector3.one * 3f;
+        }
+        
+        Vector2 position = (Vector2)player.transform.position + (Vector2)direction.normalized;
+        transform.position = position;
 
         //Lidando com a rotação da seta
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
