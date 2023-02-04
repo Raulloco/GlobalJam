@@ -10,6 +10,7 @@ public class Water : MonoBehaviour
     public GameObject Player;
     private Vector3 cursordirect;
     public Transform cursor;
+    public GameObject Seta;
     // Start is called before the first frame update
 
 
@@ -31,6 +32,7 @@ public class Water : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 teste = true;
+                Seta.SetActive(true);
 
             }
             //n tá clicando
@@ -44,6 +46,7 @@ public class Water : MonoBehaviour
                     //GetComponent<Rigidbody2D>().velocity = -cursordirect * speed;
                     teste = false;
                     Player.GetComponent<PlayerMoves>().waterjumped = true;
+                    Seta.SetActive(false);
                 }             
             }
             
