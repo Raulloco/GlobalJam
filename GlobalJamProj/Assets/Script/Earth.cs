@@ -51,7 +51,7 @@ public class Earth : MonoBehaviour
                 Player.transform.localEulerAngles=new Vector3(Player.transform.localEulerAngles.x, -180f, Player.transform.localEulerAngles.z); 
                 rotated = 1;
             }
-            else if(transform.position.x > Player.transform.position.x && rotated!=-1)
+            else if(transform.position.x >= Player.transform.position.x && rotated!=-1)
             {
                 rotated = -1;
                 Player.transform.localEulerAngles = new Vector3(Player.transform.localEulerAngles.x, 0f, Player.transform.localEulerAngles.z);

@@ -18,7 +18,6 @@ public class PlayerMoves : MonoBehaviour
     private float moveDirection;
     private bool isJumping = false;
     private bool isGrounded;
-
     public bool waterjumped;
 
     private Animator anim;
@@ -82,11 +81,15 @@ public class PlayerMoves : MonoBehaviour
     {
         if (moveDirection > 0 && !isFacingRight)
         {
-            FlipCharacter();
+            //FlipCharacter();
+            transform.eulerAngles = new Vector3(0f, 0f, 0f);
+            isFacingRight = !isFacingRight;
         }
         else if (moveDirection < 0 && isFacingRight)
         {
-            FlipCharacter();
+            //FlipCharacter();
+            transform.eulerAngles = new Vector3(0f, 180f, 0f);
+            isFacingRight = !isFacingRight;
         } 
     }
 
