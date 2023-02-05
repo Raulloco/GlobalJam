@@ -8321,7 +8321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 703977aaefb71454689b6e42c203f99b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextSceneName: Lvl-2
+  nextSceneName: Lvl-4
 --- !u!1 &379319039
 GameObject:
   m_ObjectHideFlags: 0
@@ -14091,6 +14091,7 @@ MonoBehaviour:
   - {fileID: 1058063108}
   - {fileID: 1941874217}
   - {fileID: 382183006}
+  desativar: []
   Virtual: 0
 --- !u!114 &883183071
 MonoBehaviour:
