@@ -35,7 +35,7 @@ public class Earth : MonoBehaviour
     private void OnMouseDrag()
     {
         //transform.position = Vector3.MoveTowards(transform.position,cursor.position,speed*Time.deltaTime);
-        if (!touched&&!Player.GetComponent<PlayerMoves>().waterjumped)
+        if (!touched&&!Player.GetComponent<PlayerMoves>().waterjumped&& !Player.GetComponent<PlayerMoves>().wet)
         {
             GetComponent<Rigidbody2D>().velocity = -cursordirect * speed;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;

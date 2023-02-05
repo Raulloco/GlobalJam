@@ -19,6 +19,9 @@ public class PlayerMoves : MonoBehaviour
     private bool isJumping = false;
     private bool isGrounded;
     public bool waterjumped;
+    public bool wet;
+
+    public float FallAnimTimer = 0.1f;
 
     private Animator anim;
     private void Awake()
@@ -99,7 +102,8 @@ public class PlayerMoves : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("jump",true);
-            anim.SetBool("falling", true);
+            anim.SetBool("falling", false);
+            Invoke("FallAnim", FallAnimTimer);
             isJumping = true;
         }
     }
@@ -109,14 +113,22 @@ public class PlayerMoves : MonoBehaviour
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
     }
+    public void FallAnim() 
+    {
+        anim.SetBool("falling", true);
+    }
+
     public Vector3 waterrecuo;
     public Vector3 waterecuobkp;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (waterjumped) 
         {
-            if (collision.gameObject.layer == 6&&!collision.gameObject.CompareTag("Earth")) { waterjumped = false; }
-            else 
+            if (collision.gameObject.layer == 6 && !collision.gameObject.CompareTag("Earth"))
+            {
+                waterjumped = false; 
+            }
+            else
             {
                 //quica se n for o chão
                 if (collision.gameObject.transform.position.x > transform.position.x)

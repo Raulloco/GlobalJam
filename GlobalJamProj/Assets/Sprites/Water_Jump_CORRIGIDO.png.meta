@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 8afb5571b7c1b784695a5cd302180494
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 485
+        width: 232
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97e8589f1b5aba418643d817c3f82bd
+      internalID: 746288537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 519
+        width: 233
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3340bcd4a7ea1c946ad2d650b0bf87c0
+      internalID: 2104990056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_8
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 522
+        width: 189
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2900c02d5f7614f8bed26888ac2796
+      internalID: 558407300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_53
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 344
+        width: 89
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aecd1c651d50d6b4e96d6fd79611333d
+      internalID: -391170788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_58
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 45
+        width: 125
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53808ceb006c3794bb95345437a2c6c9
+      internalID: 1117505789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_59
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 45
+        width: 152
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8dbf82739e21504cb6c3b40fde15146
+      internalID: -1436218781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_60
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 55
+        width: 291
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a3a791bf6edc545b469a0b357aa6dc
+      internalID: 804650813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_61
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 70
+        width: 232
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536bdae0f1235b648b101e6f7bffe296
+      internalID: 2142310049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_62
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 41
+        width: 96
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d12885a263e4147b280ff5c962c800
+      internalID: 929498170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_63
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 41
+        width: 107
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799a60840682f4249b8efef9521ef3ab
+      internalID: -1736300197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_65
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 42
+        width: 123
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21ee3c26f8c7c724b9cbc33758b9c884
+      internalID: 868459895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Water_Jump_CORRIGIDO_66
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 42
+        width: 117
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a399a509eb1c588428af2c9bf7d090a4
+      internalID: 77600441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Water_Jump_CORRIGIDO_60: 804650813
+      Water_Jump_CORRIGIDO_28: -1958764180
+      Water_Jump_CORRIGIDO_39: -693866610
+      Water_Jump_CORRIGIDO_57: 674805925
+      Water_Jump_CORRIGIDO_49: 51857514
+      Water_Jump_CORRIGIDO_51: 148970285
+      Water_Jump_CORRIGIDO_8: 558407300
+      Water_Jump_CORRIGIDO_54: -920880386
+      Water_Jump_CORRIGIDO_7: -1304443349
+      Water_Jump_CORRIGIDO_31: -1005111459
+      Water_Jump_CORRIGIDO_63: -1736300197
+      Water_Jump_CORRIGIDO_47: 283331563
+      Water_Jump_CORRIGIDO_24: 1898791851
+      Water_Jump_CORRIGIDO_16: -552295824
+      Water_Jump_CORRIGIDO_58: 1117505789
+      Water_Jump_CORRIGIDO_4: 1519107900
+      Water_Jump_CORRIGIDO_34: -1058544958
+      Water_Jump_CORRIGIDO_41: 1724699206
+      Water_Jump_CORRIGIDO_42: 718683747
+      Water_Jump_CORRIGIDO_13: -717093665
+      Water_Jump_CORRIGIDO_2: 746288537
+      Water_Jump_CORRIGIDO_25: 688117167
+      Water_Jump_CORRIGIDO_40: -1747271483
+      Water_Jump_CORRIGIDO_46: -1327893934
+      Water_Jump_CORRIGIDO_36: 1114230872
+      Water_Jump_CORRIGIDO_9: 2081425337
+      Water_Jump_CORRIGIDO_48: 443028927
+      Water_Jump_CORRIGIDO_32: -1965030742
+      Water_Jump_CORRIGIDO_1: 470644410
+      Water_Jump_CORRIGIDO_15: -1401334774
+      Water_Jump_CORRIGIDO_5: 390105895
+      Water_Jump_CORRIGIDO_11: 2058103989
+      Water_Jump_CORRIGIDO_62: 929498170
+      Water_Jump_CORRIGIDO_68: 1893805554
+      Water_Jump_CORRIGIDO_44: -777951886
+      Water_Jump_CORRIGIDO_45: -857577575
+      Water_Jump_CORRIGIDO_14: 1510305703
+      Water_Jump_CORRIGIDO_61: 2142310049
+      Water_Jump_CORRIGIDO_18: -798376848
+      Water_Jump_CORRIGIDO_21: -1119967776
+      Water_Jump_CORRIGIDO_6: -1789150294
+      Water_Jump_CORRIGIDO_56: 1795874703
+      Water_Jump_CORRIGIDO_20: -1887197220
+      Water_Jump_CORRIGIDO_67: -1477102231
+      Water_Jump_CORRIGIDO_17: -203207355
+      Water_Jump_CORRIGIDO_35: -668454261
+      Water_Jump_CORRIGIDO_37: -1980740148
+      Water_Jump_CORRIGIDO_0: 1297627941
+      Water_Jump_CORRIGIDO_50: -530033805
+      Water_Jump_CORRIGIDO_38: -146483836
+      Water_Jump_CORRIGIDO_23: -1131948621
+      Water_Jump_CORRIGIDO_10: -1601646694
+      Water_Jump_CORRIGIDO_33: -1711261479
+      Water_Jump_CORRIGIDO_12: 801443638
+      Water_Jump_CORRIGIDO_52: 305325019
+      Water_Jump_CORRIGIDO_22: 1923676890
+      Water_Jump_CORRIGIDO_26: 1579944398
+      Water_Jump_CORRIGIDO_19: -1832619392
+      Water_Jump_CORRIGIDO_30: 1112470353
+      Water_Jump_CORRIGIDO_43: 1617052585
+      Water_Jump_CORRIGIDO_27: 61475469
+      Water_Jump_CORRIGIDO_3: 2104990056
+      Water_Jump_CORRIGIDO_59: -1436218781
+      Water_Jump_CORRIGIDO_64: 1410009280
+      Water_Jump_CORRIGIDO_65: 868459895
+      Water_Jump_CORRIGIDO_53: -391170788
+      Water_Jump_CORRIGIDO_55: -960910222
+      Water_Jump_CORRIGIDO_66: 77600441
+      Water_Jump_CORRIGIDO_29: -841184717
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -25,12 +25,15 @@ public class Water : MonoBehaviour
             //transform.position = new Vector3(Player.gameObject.transform.position.x, Player.gameObject.transform.position.y-playerposcorrection.y, transform.position.z);
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<Collider2D>().enabled = false;
+            Player.GetComponent<Animator>().SetBool("Waterexplode", false);
         }
         else
         { 
             GetComponent<SpriteRenderer>().enabled = true; 
             GetComponent<Collider2D>().enabled = true;
             transform.SetParent(null);
+            Player.GetComponent<Animator>().SetBool("Waterexplode", true);
+            Player.GetComponent<Animator>().SetBool("Waterbubble", false);
         }
         //direção do mouse
         cursordirect = new Vector3(Player.transform.position.x - cursor.position.x, Player.transform.position.y - cursor.position.y, 0);
@@ -42,6 +45,7 @@ public class Water : MonoBehaviour
             {
                 teste = true;
                 Seta.SetActive(true);
+                Player.GetComponent<Animator>().SetBool("Watercharging", true);
 
             }
             //n tá clicando
@@ -51,26 +55,34 @@ public class Water : MonoBehaviour
                 if (teste)
                 {
                     //Player.transform.position= Vector3.MoveTowards(Player.transform.position, cursor.position, speed);
-                    Player.GetComponent<Rigidbody2D>().AddForce(-cursordirect*speed);
+                    Player.GetComponent<Rigidbody2D>().AddForce(-cursordirect * speed);
                     //GetComponent<Rigidbody2D>().velocity = -cursordirect * speed;
                     teste = false;
                     Player.GetComponent<PlayerMoves>().waterjumped = true;
                     Seta.SetActive(false);
                     transform.SetParent(Player.transform, true);
-                }             
+                    Player.GetComponent<Animator>().SetBool("Waterbubble", true);
+                    Invoke("fallanim", Player.GetComponent<PlayerMoves>().FallAnimTimer);
+                }
             }
-            
+
         }
         //saiu da poça
-        else teste = false; 
+        else { teste = false; }
+        
 
     }
+    void fallanim() 
+        {
+            Player.GetComponent<PlayerMoves>().FallAnim();
+        }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) 
+        if (collision.gameObject.CompareTag("Player"))
         {
-            wet = true;   
-            Player=collision.gameObject;
+            wet = true;
+            Player.GetComponent<PlayerMoves>().wet = true;
+            Player =collision.gameObject;
             //playerposcorrection = new Vector3(0, Player.gameObject.transform.position.y-transform.position.y , 0);
         }
     }
@@ -79,7 +91,9 @@ public class Water : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             wet = false;
+            Player.GetComponent<PlayerMoves>().wet = false;
             Seta.SetActive(false);
+            Player.GetComponent<Animator>().SetBool("Watercharging", false);
         }
     }
 }
