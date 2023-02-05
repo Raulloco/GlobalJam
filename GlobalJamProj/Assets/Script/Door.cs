@@ -18,6 +18,7 @@ public class Door : MonoBehaviour
     public bool follower;
     public Vector2 correction;
     public float cameraspeed;
+    public float camerasize;
     [SerializeField] private CameraMove cam;
 
 
@@ -43,13 +44,17 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
 
-            if (cam.following) 
+            if (cam.following)
             {
                 cam.MoveCamera(nextroom.position.x, nextroom.position.y);
                 cam.CameraSpeed += cameraspeed;
+                cam.CamSize += camerasize;
             }
             else
+            {
                 cam.CameraSpeed -= cameraspeed;
+                cam.CamSize -= camerasize;
+            }
             if (follower)
             {
                 cam.following = !cam.following;
