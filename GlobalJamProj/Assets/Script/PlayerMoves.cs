@@ -15,7 +15,7 @@ public class PlayerMoves : MonoBehaviour
     private int jumpCount;
     private Rigidbody2D rb;
     public bool isFacingRight = true;
-    private float moveDirection;
+    public float moveDirection;
     private bool isJumping = false;
     private bool isGrounded;
     public bool waterjumped;

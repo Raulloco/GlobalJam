@@ -33,7 +33,8 @@ public class VirtualMan : MonoBehaviour
                 Virtual = true;
             GetComponent<PlayerMoves>().enabled = false;
             GetComponent<Animator>().SetBool("walking",false);
-            
+            GetComponent<Animator>().SetBool("Lighting", true);
+
         } else if(Input.GetKeyUp("e"))
         {
             for (int i = 0; i < ativar.Length; i++)
@@ -43,6 +44,7 @@ public class VirtualMan : MonoBehaviour
             }
             Virtual = false;
             GetComponent<PlayerMoves>().enabled = true;
+            GetComponent<Animator>().SetBool("Lighting", false);
         }
     }
 }
