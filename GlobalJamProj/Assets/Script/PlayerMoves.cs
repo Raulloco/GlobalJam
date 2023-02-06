@@ -120,6 +120,9 @@ public class PlayerMoves : MonoBehaviour
 
     public Vector3 waterrecuo;
     public Vector3 waterecuobkp;
+
+    public GameObject PlayerLight;
+    public GameObject Waterlight;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (waterjumped) 
@@ -127,6 +130,9 @@ public class PlayerMoves : MonoBehaviour
             if (collision.gameObject.layer == 6 && !collision.gameObject.CompareTag("Earth"))
             {
                 waterjumped = false; 
+                PlayerLight.SetActive(true);
+                Waterlight.SetActive(false);
+                GetComponent<VirtualMan>().enabled = true;
             }
             else
             {
